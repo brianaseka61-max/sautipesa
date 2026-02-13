@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sauti Pesa | The Voice of Growth</title>
+    <meta name="description" content="Sauti Pesa: Kenya's #1 Voice Assistant for SMEs. Stop M-Pesa fraud with real-time audio confirmations and manage your duka like a pro.">
+    <meta name="keywords" content="Sauti Pesa, M-Pesa scam protection, Kenyan SME, Brian Aseka, Business management app Kenya, M-Pesa voice alert">
+    <meta name="author" content="Brian Aseka">
+
+    <meta property="og:title" content="Sauti Pesa | The Voice of Growth">
+    <meta property="og:description" content="Kama Sauti Pesa Haijaongea, Pesa Haijaingia! Secure your business with real-time voice confirmations.">
+    <meta property="og:image" content="https://brianaseka61-max.github.io/sautipesa/hero-bg.jpg">
+    <meta property="og:url" content="https://brianaseka61-max.github.io/sautipesa/">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #0046ad;
+            --success-green: #28a745;
+            --light-bg: #f8f9fa;
+            --dark-text: #2d3436;
+            --accent-yellow: #ffc107;
+        }
+
+        /* Basic Reset & Speed Optimization */
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            line-height: 1.6; 
+            color: var(--dark-text); 
+            background-color: var(--light-bg);
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav { 
+            background: white; 
+            padding: 12px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        .logo-nav { display: flex; align-items: center; text-decoration: none; }
+        .logo-nav img { height: 40px; width: auto; margin-right: 10px; border-radius: 5px; }
+        .logo-nav span { font-weight: 800; font-size: 1.3rem; color: var(--primary-blue); }
+
+        /* Hero Section with Color Placeholder */
+        header { 
+            background-color: var(--primary-blue); 
+            background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('hero-bg.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white; 
+            padding: 100px 20px; 
+            text-align: center; 
+        }
+        header h1 { font-size: 2.8rem; margin: 0; line-height: 1.2; font-weight: 800; }
+        header p { font-size: 1.2rem; margin: 20px 0; opacity: 0.95; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* Modern Download Button */
+        .download-btn { 
+            display: inline-block; 
+            background-color: var(--success-green); 
+            color: white; 
+            padding: 18px 40px; 
+            text-decoration: none; 
+            font-size: 1.3rem; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            margin-top: 10px;
+            box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4); 
+            transition: all 0.3s ease; 
+        }
+        .download-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(40, 167, 69, 0.5); }
+
+        /* Sections */
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        section { margin-bottom: 70px; }
+        h2 { color: var(--primary-blue); font-size: 2rem; text-align: center; margin-bottom: 30px; }
+        
+        .card-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+        }
+        .card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--primary-blue);
+        }
+        .card img { height: 60px; width: auto; margin-bottom: 15px; }
+
+        /* Security Box */
+        .security-banner { 
+            background: #fff9e6; 
+            border: 1px solid #ffeeba; 
+            padding: 20px; 
+            border-radius: 10px; 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer { 
+            background: #111; 
+            color: white; 
+            padding: 60px 20px; 
+            text-align: center; 
+        }
+        .whatsapp-cta { 
+            color: var(--success-green); 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
+            header { padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" class="logo-nav">
+        <img src="logo.png" alt="Sauti Pesa" loading="eager">
+        <span>SAUTI PESA</span>
+    </a>
+    <div class="nav-links">
+        <a href="https://wa.me/254119389659" target="_blank" class="whatsapp-cta">Help?</a>
+    </div>
+</nav>
+
+<header>
+    <h1>Kama Sauti Pesa Haijaongea, Pesa Haijaingia!</h1>
+    <p>The #1 Financial Voice Assistant for Kenyan SMEs. Real-time protection for your daily hustle.</p>
+    <a href="SautiPesa.apk" class="download-btn">📲 DOWNLOAD SAUTI PESA</a>
+</header>
+
+<div class="container">
+    
+    <div class="security-banner">
+        <span style="font-size: 2rem;">🛡️</span>
+        <p style="margin:0; font-size: 0.95rem;"><strong>Safe Download:</strong> Since you are downloading directly from us, tap <b>"Download Anyway"</b> if your phone shows a warning. Sauti Pesa is 100% secure and verified.</p>
+    </div>
+
+    <section id="about">
+        <h2>What is Sauti Pesa?</h2>
+        <p>Sauti Pesa is a revolutionary <b>FinTech</b> tool designed for the Kenyan SME niche. We provide business intelligence to small shop owners, ensuring that every "Duka" has the same professional security as a large supermarket.</p>
+        
+        <div style="background: white; padding: 30px; border-radius: 15px; margin-top: 30px;">
+            <h3 style="color: var(--primary-blue);">Mission & Vision</h3>
+            <p><strong>Mission:</strong> To eliminate M-Pesa fraud through innovative voice-confirmation technology.</p>
+            <p><strong>Vision:</strong> To empower 1 million Kenyan SMEs with digital financial clarity by 2030.</p>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2>Why Choose Sauti Pesa?</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="icon-voice.png" alt="Voice Security" loading="lazy">
+                <h3>Voice Security</h3>
+                <p>Audible payment alerts. If the app doesn't speak, don't release the goods.</p>
+            </div>
+            <div class="card">
+                <img src="icon-manage.png" alt="Business Tools" loading="lazy">
+                <h3>Business Tools</h3>
+                <p>Manage your debts (Mdeni), stock, and see your daily profit instantly.</p>
+            </div>
+            <div class="card">
+                <img src="icon-afford.png" alt="Low Cost" loading="lazy">
+                <h3>Affordability</h3>
+                <p>Professional business management for just <b>100/- per month.</b></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="problem" style="text-align: center;">
+        <h2>Solving the "Hakikisha" Gap</h2>
+        <p>We solve the problem of fake confirmation messages and cancelled transactions. Sauti Pesa gives your business a <b>Voice</b> that scammers cannot fake.</p>
+    </section>
+</div>
+
+<footer>
+    <p style="font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">SAUTI PESA</p>
+    <p>The Voice of Growth | Nairobi, Kenya</p>
+    <p style="margin: 25px 0;">
+        <a href="https://wa.me/254119389659" class="whatsapp-cta">💬 Chat with Support: +254 119 389 659</a>
+    </p>
+    <p style="opacity: 0.6; font-size: 0.8rem;">© 2026 Sauti Pesa. Built for the 254 Hustle.</p>
+</footer>
+
+</body>
+</html>
