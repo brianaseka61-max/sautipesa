@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Sauti Pesa | The Voice of Business Growth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sauti Pesa | Smart Business Voice Assistant</title>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HV0MCY1PEV"></script>
     <script>
@@ -22,40 +22,38 @@
             --success: #22c55e;
             --accent: #facc15;
             --surface: #ffffff;
-            --body: #64748b;
-            --heading: #0f172a;
+            --text-main: #0f172a;
+            --text-sub: #64748b;
         }
 
-        /* 1. PROFESSIONAL RESET */
+        /* 1. THE "NO-SPACE" RESET */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { 
+        
+        html, body { 
             width: 100%; 
-            overflow-x: hidden; 
+            overflow-x: hidden; /* This kills the white space on the right */
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background: #f8fafc;
-            color: var(--body);
-            line-height: 1.6;
+            color: var(--text-main);
+            scroll-behavior: smooth;
         }
 
-        /* 2. TOP PROMO MARQUEE */
-        .promo-bar {
+        /* 2. MARQUEE */
+        .marquee {
             background: var(--accent);
-            color: #000;
-            padding: 12px 0;
+            padding: 10px 0;
             font-weight: 800;
             font-size: 12px;
             white-space: nowrap;
             overflow: hidden;
-            border-bottom: 2px solid #000;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
-        .promo-bar span { display: inline-block; padding-left: 100%; animation: scroll 20s linear infinite; }
+        .marquee span { display: inline-block; padding-left: 100%; animation: scroll 20s linear infinite; }
         @keyframes scroll { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
 
-        /* 3. STICKY HEADER NAV */
+        /* 3. NAVIGATION */
         nav {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
+            background: white;
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
@@ -63,99 +61,216 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        .logo { display: flex; align-items: center; text-decoration: none; font-weight: 800; color: var(--brand); font-size: 1.1rem; }
-        .logo img { height: 32px; margin-right: 10px; border-radius: 6px; }
-        .nav-links { display: none; } /* On mobile, we keep it clean */
+        .logo { font-weight: 800; color: var(--brand); display: flex; align-items: center; text-decoration: none; font-size: 1.1rem; }
+        .logo img { height: 30px; margin-right: 8px; }
 
-        /* 4. PREMIUM HERO SECTION */
+        /* 4. HERO SECTION */
         header {
             background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
             color: white;
-            padding: 80px 20px 140px;
+            padding: 60px 20px 100px;
             text-align: center;
             position: relative;
-            overflow: hidden;
         }
-        .hero-bg-icon {
+        .hero-icon {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             opacity: 0.1;
-            width: 80%;
-            max-width: 400px;
+            width: 250px;
             pointer-events: none;
-            z-index: 1;
         }
-        .hero-content { position: relative; z-index: 2; }
-        header h1 { font-size: 2.4rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
-        header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        header h1 { font-size: 2.2rem; line-height: 1.2; font-weight: 800; margin-bottom: 15px; position: relative; z-index: 2; }
+        header p { font-size: 1rem; opacity: 0.9; max-width: 500px; margin: auto; position: relative; z-index: 2; }
 
-        /* 5. DOWNLOAD CTA CARD */
-        .main-card {
+        /* 5. APP CARD (DOWNLOAD) */
+        .cta-card {
             width: 90%;
-            max-width: 500px;
-            background: var(--surface);
-            margin: -90px auto 40px;
-            padding: 40px 30px;
-            border-radius: 28px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+            max-width: 450px;
+            background: white;
+            margin: -60px auto 40px;
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             text-align: center;
             position: relative;
             z-index: 10;
         }
-        .dl-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .dl-btn {
+            display: block;
             background: #000;
             color: white;
             text-decoration: none;
-            padding: 22px;
-            border-radius: 16px;
+            padding: 18px;
+            border-radius: 12px;
             font-weight: 800;
-            font-size: 1.1rem;
-            margin: 25px 0 15px;
-            transition: transform 0.2s;
+            margin: 20px 0;
+            font-size: 1rem;
         }
-        .dl-button:active { transform: scale(0.96); }
 
-        /* 6. FEATURES SECTION */
-        section { padding: 60px 20px; max-width: 1200px; margin: auto; }
-        .section-header { text-align: center; margin-bottom: 40px; }
-        .section-header h2 { font-size: 2rem; color: var(--heading); font-weight: 800; }
+        /* 6. FEATURES GRID */
+        section { padding: 40px 20px; width: 100%; max-width: 1100px; margin: auto; }
+        .section-title { text-align: center; font-size: 1.8rem; font-weight: 800; margin-bottom: 30px; }
+        
+        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .card { background: white; padding: 30px; border-radius: 20px; border: 1px solid #e2e8f0; }
+        .card h3 { color: var(--brand); margin-bottom: 10px; font-weight: 700; }
 
-        .feature-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        .feature-card { background: #fff; padding: 30px; border-radius: 20px; border: 1px solid #e2e8f0; }
-        .feature-card h3 { color: var(--brand); margin-bottom: 12px; font-size: 1.3rem; }
-
-        /* 7. REGISTRATION (ONLY ONCE) */
-        .onboard-area {
-            background: #fff;
-            border: 2px solid var(--brand);
-            padding: 40px 25px;
-            border-radius: 32px;
-            max-width: 600px;
-            margin: 0 auto;
+        /* 7. REGISTRATION FORM */
+        .form-box {
+            background: white;
+            border: 2px dashed var(--brand);
+            padding: 30px 20px;
+            border-radius: 24px;
+            margin-top: 20px;
         }
-        .form-label { font-weight: 700; color: var(--heading); font-size: 14px; margin-bottom: 8px; display: block; }
         input {
             width: 100%;
-            padding: 18px;
-            margin-bottom: 20px;
-            border: 1.5px solid #e2e8f0;
-            border-radius: 14px;
+            padding: 15px;
+            margin: 10px 0 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
             font-size: 1rem;
-            font-family: inherit;
         }
-        .submit-btn {
+        .wa-btn {
             width: 100%;
             background: var(--success);
             color: white;
-            padding: 20px;
-            border-radius: 14px;
+            padding: 18px;
+            border-radius: 10px;
+            font-weight: 800;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        /* 8. INDUSTRIES */
+        .tag-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px; }
+        .tag { background: #f1f5f9; padding: 12px; border-radius: 8px; text-align: center; font-weight: 700; font-size: 0.85rem; color: var(--brand-dark); }
+
+        /* 9. FOOTER / ABOUT */
+        footer { background: #0f172a; color: white; padding: 60px 20px; text-align: center; margin-top: 40px; }
+        .footer-content { text-align: left; max-width: 800px; margin: 0 auto 40px; }
+        .footer-content h3 { color: var(--accent); margin-bottom: 10px; }
+        .footer-content p { font-size: 0.9rem; opacity: 0.7; line-height: 1.6; margin-bottom: 20px; }
+
+        /* DESKTOP FIXES */
+        @media (min-width: 768px) {
+            header h1 { font-size: 3.5rem; }
+            .grid { grid-template-columns: repeat(3, 1fr); }
+            .tag-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="marquee">
+    <span>💎 SPECIAL OFFER: JOIN THE FOUNDING 1,000 SMEs TODAY — PROTECT YOUR SHOP FOR ONLY KSH 100 PER MONTH! 💎</span>
+</div>
+
+<nav>
+    <a href="#" class="logo">
+        <img src="logo.png" alt="Sauti Pesa">
+        SAUTI PESA
+    </a>
+    <a href="https://wa.me/254119389659" style="color:var(--success); text-decoration:none; font-weight:800; font-size:0.8rem;">SUPPORT</a>
+</nav>
+
+<header>
+    <img src="hero-bg.png" class="hero-icon" alt="">
+    <h1>Kama Sauti Pesa Haijaongea, Pesa Haijaingia!</h1>
+    <p>The only AI Voice Assistant that confirms M-Pesa payments aloud. Stop fraud and manage your duka like a pro.</p>
+</header>
+
+<div class="cta-card">
+    <p style="text-transform: uppercase; font-weight: 800; font-size: 11px; color: var(--brand);">Step 1: Download</p>
+    <h2 style="margin: 10px 0;">Get the App</h2>
+    <p style="color: var(--text-sub); font-size: 14px;">Install the official Sauti Pesa APK.</p>
+    
+    <a href="SautiPesa.apk" class="dl-btn">📲 DOWNLOAD APK FILE</a>
+    
+    <p style="font-size: 11px; opacity: 0.5;">Verified Safe for all Android Devices</p>
+</div>
+
+<section id="features">
+    <h2 class="section-title">Built for Your Growth</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Voice Security</h3>
+            <p>Our AI hears your payment alerts and speaks them out. If it doesn't speak, don't give out goods.</p>
+        </div>
+        <div class="card">
+            <h3>Debt Tracker</h3>
+            <p>Digitally record your "Mdeni" and send them friendly reminders via WhatsApp automatically.</p>
+        </div>
+        <div class="card">
+            <h3>Daily Profit</h3>
+            <p>Stop using counter-books. See your daily sales and exact profit margins on your phone.</p>
+        </div>
+    </div>
+</section>
+
+<section id="register">
+    <div class="form-box">
+        <p style="text-align:center; text-transform: uppercase; font-weight: 800; font-size: 11px; color: var(--brand);">Step 2: Join Founders</p>
+        <h2 style="text-align: center; margin: 10px 0;">Founding Member</h2>
+        <p style="text-align: center; color: var(--text-sub); margin-bottom: 25px;">Reserve your spot for only <b>Ksh 100/month</b>.</p>
+        
+        <form id="waForm">
+            <label style="font-weight: 700; font-size: 14px;">Business Name</label>
+            <input type="text" id="bizName" placeholder="e.g. Jane's Duka" required>
+            
+            <label style="font-weight: 700; font-size: 14px;">WhatsApp Number</label>
+            <input type="tel" id="bizPhone" placeholder="07XXXXXXXX" required>
+            
+            <button type="submit" class="wa-btn">REGISTER VIA WHATSAPP</button>
+        </form>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Built For Your Shop</h2>
+    <div class="tag-grid">
+        <div class="tag">Retail Dukas</div>
+        <div class="tag">Pharmacies</div>
+        <div class="tag">Hardware</div>
+        <div class="tag">Agrovets</div>
+        <div class="tag">Boutiques</div>
+        <div class="tag">M-Pesa Agents</div>
+        <div class="tag">Wholesalers</div>
+        <div class="tag">Salons</div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <h3>About Sauti Pesa</h3>
+        <p>Sauti Pesa is a Kenyan FinTech dedicated to providing small business owners with the tools they need to thrive. Our AI voice technology prevents thousands of shillings in fraud every day.</p>
+        
+        <h3>Privacy & Data</h3>
+        <p>We process M-Pesa notifications locally on your device. We do not store or share your private messages with anyone. Notification access is only used for voice alerts.</p>
+    </div>
+    
+    <h2 style="margin-bottom: 10px;">SAUTI PESA</h2>
+    <p>Nairobi, Kenya | +254 119 389 659</p>
+    <p style="margin-top: 30px; opacity: 0.3; font-size: 12px;">© 2026 Sauti Pesa. The Voice of Growth.</p>
+</footer>
+
+<script>
+    document.getElementById('waForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const n = document.getElementById('bizName').value;
+        const p = document.getElementById('bizPhone').value;
+        const m = `Hello Sauti Pesa! I want to join as a Founding Member.\n\nBusiness: ${n}\nPhone: ${p}`;
+        window.open(`https://wa.me/254119389659?text=${encodeURIComponent(m)}`, '_blank');
+    });
+</script>
+
+</body>
+</html>            border-radius: 14px;
             font-weight: 800;
             border: none;
             font-size: 1.1rem;
