@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HV0MCY1PEV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HV0MCY1PEV');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -56,6 +64,7 @@
         .logo-nav { display: flex; align-items: center; text-decoration: none; }
         .logo-nav img { height: 40px; width: auto; margin-right: 10px; border-radius: 5px; }
         .logo-nav span { font-weight: 800; font-size: 1.3rem; color: var(--primary-blue); }
+        .nav-links a { margin-left: 15px; text-decoration: none; font-weight: 600; color: var(--dark-text); }
 
         /* Hero Section with Color Placeholder */
         header { 
@@ -107,6 +116,17 @@
         }
         .card img { height: 60px; width: auto; margin-bottom: 15px; }
 
+        /* Privacy & Policy Box */
+        .policy-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #ddd;
+            font-size: 0.95rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
         /* Security Box */
         .security-banner { 
             background: #fff9e6; 
@@ -148,6 +168,8 @@
         <span>SAUTI PESA</span>
     </a>
     <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#privacy">Privacy</a>
         <a href="https://wa.me/254119389659" target="_blank" class="whatsapp-cta">Help?</a>
     </div>
 </nav>
@@ -166,13 +188,16 @@
     </div>
 
     <section id="about">
-        <h2>What is Sauti Pesa?</h2>
-        <p>Sauti Pesa is a revolutionary <b>FinTech</b> tool designed for the Kenyan SME niche. We provide business intelligence to small shop owners, ensuring that every "Duka" has the same professional security as a large supermarket.</p>
-        
-        <div style="background: white; padding: 30px; border-radius: 15px; margin-top: 30px;">
-            <h3 style="color: var(--primary-blue);">Mission & Vision</h3>
-            <p><strong>Mission:</strong> To eliminate M-Pesa fraud through innovative voice-confirmation technology.</p>
-            <p><strong>Vision:</strong> To empower 1 million Kenyan SMEs with digital financial clarity by 2030.</p>
+        <h2>About Sauti Pesa</h2>
+        <div class="card" style="text-align: left;">
+            <p>Sauti Pesa is a revolutionary <b>FinTech</b> tool designed specifically for the Kenyan SME ecosystem. We empower small shop owners ("Duka") with professional security and business intelligence.</p>
+            <p>Our app <b>listens to incoming M-Pesa messages</b> and announces them out loud, ensuring payment is confirmed without you even touching your phone. But we are more than just a voice—Sauti Pesa is a complete business suite that allows you to manage <b>Cash Sales, Inventory, Debts (Mdeni), Expenses, CRM, and a Business Calendar</b>. You can even personalize your experience in settings by adjusting the volume, choosing voice personas, and managing secure backups.</p>
+            
+            <div style="background: var(--light-bg); padding: 20px; border-radius: 10px; margin-top: 20px;">
+                <h3 style="color: var(--primary-blue); margin-top: 0;">Our Goal</h3>
+                <p><strong>Mission:</strong> To eliminate M-Pesa fraud through innovative voice-confirmation technology.</p>
+                <p><strong>Vision:</strong> To empower 1 million Kenyan SMEs with digital financial clarity by 2030.</p>
+            </div>
         </div>
     </section>
 
@@ -186,14 +211,28 @@
             </div>
             <div class="card">
                 <img src="icon-manage.png" alt="Business Tools" loading="lazy">
-                <h3>Business Tools</h3>
-                <p>Manage your debts (Mdeni), stock, and see your daily profit instantly.</p>
+                <h3>Full Suite Tools</h3>
+                <p>Record cash sales, track inventory, manage debts, and view profits instantly.</p>
             </div>
             <div class="card">
                 <img src="icon-afford.png" alt="Low Cost" loading="lazy">
                 <h3>Affordability</h3>
                 <p>Professional business management for just <b>100/- per month.</b></p>
             </div>
+        </div>
+    </section>
+
+    <section id="privacy">
+        <h2>Privacy Policy</h2>
+        <div class="policy-content">
+            <h3>1. Data Protection</h3>
+            <p>Sauti Pesa respects your privacy. We process incoming M-Pesa notification data locally on your device to trigger voice alerts. We do not store or share your personal private messages.</p>
+            <h3>2. Information Usage</h3>
+            <p>Data entered regarding sales, debts, and inventory is stored securely on your device. If you choose to use the backup feature, this data is encrypted and saved to your personal backup selection.</p>
+            <h3>3. Permissions</h3>
+            <p>The app requires "Notification Access" to detect M-Pesa messages and "Storage" to save your business records. These are essential for the app's core functions.</p>
+            <h3>4. Security</h3>
+            <p>We use industry-standard security protocols to ensure your financial data remains your own. Sauti Pesa does not sell user data to third parties.</p>
         </div>
     </section>
 
