@@ -20,46 +20,48 @@
             --blue: #0046ad;
             --dark: #002d72;
             --green: #28a745;
-            --accent: #facc15;
+            --light-bg: #f8fafc;
         }
 
-        /* CRITICAL FIX: Prevent horizontal scrolling and "left-pushing" */
+        /* FIX: Reset and Overflow Protection */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         html, body {
             width: 100%;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevents the white space on the right */
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+            background-color: var(--light-bg);
             color: #0f172a;
+            line-height: 1.5;
         }
 
-        /* HEADER & HERO */
+        /* Section Spacing */
+        section { padding: 50px 20px; width: 100%; }
+        .container { max-width: 1100px; margin: auto; width: 100%; }
+
+        /* HERO AREA */
         header {
             background: linear-gradient(180deg, var(--blue) 0%, var(--dark) 100%);
             color: white;
-            padding: 50px 20px 100px;
+            padding: 60px 20px 100px;
             text-align: center;
-            width: 100%;
         }
-
-        header h1 { font-size: 2.2rem; line-height: 1.1; margin-bottom: 15px; font-weight: 900; }
+        header h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 15px; }
         header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: auto; }
 
-        /* FIXED DOWNLOAD CARD */
-        .download-box {
-            width: 92%;
-            max-width: 450px;
+        /* DOWNLOAD CARD */
+        .dl-card {
             background: white;
-            margin: -60px auto 30px;
-            padding: 30px 20px;
+            width: 90%;
+            max-width: 450px;
+            margin: -60px auto 40px;
+            padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             text-align: center;
             position: relative;
             z-index: 10;
         }
-
         .dl-btn {
             display: block;
             background: #000;
@@ -68,84 +70,138 @@
             padding: 20px;
             border-radius: 12px;
             font-weight: 800;
-            font-size: 1.1rem;
             margin-top: 20px;
+            transition: 0.3s;
         }
+        .dl-btn:hover { background: #333; }
 
-        /* MAIN WRAPPER */
-        .content {
-            width: 100%;
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
+        /* STEP GRID */
+        .steps { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 30px; }
+        .step-box { background: white; padding: 25px; border-radius: 15px; border: 1px solid #e2e8f0; text-align: center; }
+        .circle { background: var(--blue); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-weight: 800; }
+
+        /* REGISTRATION FORM */
+        .form-section { background: white; border: 2px dashed var(--blue); border-radius: 24px; padding: 40px 20px; }
+        input { width: 100%; padding: 15px; margin: 10px 0 20px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; }
+        .btn-green { width: 100%; background: var(--green); color: white; padding: 18px; border-radius: 10px; font-weight: 800; border: none; font-size: 1.1rem; cursor: pointer; }
+
+        /* WHO IS THIS FOR */
+        .target-box { background: var(--dark); color: white; border-radius: 24px; text-align: center; }
+        .tag-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 25px; }
+        .tag { background: rgba(255,255,255,0.1); padding: 12px; border-radius: 10px; font-size: 0.85rem; font-weight: 600; }
+
+        /* ABOUT US & PRIVACY */
+        .info-section { background: #fff; padding: 40px 20px; border-radius: 20px; margin-top: 30px; }
+        .info-section h3 { color: var(--blue); margin-bottom: 15px; }
+
+        footer { background: #0f172a; color: white; text-align: center; padding: 60px 20px; }
+
+        /* DESKTOP VIEW ADJUSTMENTS */
+        @media (min-width: 768px) {
+            header h1 { font-size: 4rem; }
+            .steps { grid-template-columns: repeat(3, 1fr); }
+            .tag-grid { grid-template-columns: repeat(4, 1fr); }
+            .dl-card { max-width: 500px; }
         }
+    </style>
+</head>
+<body>
 
-        /* GRID SYSTEM - Responsive */
-        .features {
-            display: grid;
-            grid-template-columns: 1fr; /* Default to 1 column for mobile */
-            gap: 20px;
-            margin: 40px 0;
-        }
+<header>
+    <h1>Kama Sauti Pesa Haijaongea, Pesa Haijaingia!</h1>
+    <p>The #1 AI Business Voice Assistant for Kenya. Stop M-Pesa fraud and manage your shop automatically.</p>
+</header>
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid #e2e8f0;
-            text-align: center;
-        }
+<div class="dl-card">
+    <div style="background: #fef9c3; color: #854d0e; display: inline-block; padding: 5px 15px; border-radius: 50px; font-weight: 800; font-size: 12px;">STEP 1: DOWNLOAD APP</div>
+    <h2 style="margin: 10px 0;">Protect Your Business</h2>
+    <p style="color: #64748b; font-size: 14px;">Download our APK directly to get started. Safe and verified for Android.</p>
+    
+    <a href="SautiPesa.apk" class="dl-btn">📲 DOWNLOAD SAUTI PESA APK</a>
+</div>
 
-        /* ONBOARDING FORM */
-        .form-area {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 20px;
-            border: 2px dashed var(--blue);
-            margin-bottom: 50px;
-        }
+<section class="container">
+    <h2 style="text-align: center; color: var(--blue); margin-bottom: 30px;">3 Steps to Growth</h2>
+    <div class="steps">
+        <div class="step-box">
+            <div class="circle">1</div>
+            <h3>Install APK</h3>
+            <p>Download the app above and give it permission to hear your payment notifications.</p>
+        </div>
+        <div class="step-box">
+            <div class="circle">2</div>
+            <h3>Register Below</h3>
+            <p>Join the founding members to unlock Debt (Mdeni) tracking and Daily Profit analytics.</p>
+        </div>
+        <div class="step-box">
+            <div class="circle">3</div>
+            <h3>Stop Fraud</h3>
+            <p>If the app hasn't spoken, don't release the goods. Save thousands in fake SMS scams.</p>
+        </div>
+    </div>
+</section>
 
-        input {
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0 20px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
+<section class="container">
+    <div class="form-section">
+        <h2 style="text-align: center; margin-bottom: 5px;">Step 2: Reserve Founding Spot</h2>
+        <p style="text-align: center; color: #64748b; font-size: 14px; margin-bottom: 30px;">Reserve your spot for **Ksh 100/month** (Founder Price).</p>
+        <form id="waForm">
+            <label style="font-weight: 700;">Business Name</label>
+            <input type="text" id="bizName" placeholder="e.g., Mama Njuguna Groceries" required>
+            <label style="font-weight: 700;">WhatsApp Number</label>
+            <input type="tel" id="bizPhone" placeholder="07XXXXXXXX" required>
+            <button type="submit" class="btn-green">REGISTER & PAY KSH 100</button>
+        </form>
+    </div>
+</section>
 
-        .submit-wa {
-            width: 100%;
-            background: var(--green);
-            color: white;
-            padding: 18px;
-            border-radius: 10px;
-            font-weight: 800;
-            border: none;
-            font-size: 1.1rem;
-        }
+<section class="container">
+    <div class="target-box">
+        <h2 style="padding-top: 20px;">Built For Your Business</h2>
+        <div class="tag-grid">
+            <div class="tag">Retail Dukas</div>
+            <div class="tag">Wholesalers</div>
+            <div class="tag">Pharmacies</div>
+            <div class="tag">Hardware</div>
+            <div class="tag">Beauty Salons</div>
+            <div class="tag">Agrovets</div>
+            <div class="tag">M-Pesa Agents</div>
+            <div class="tag">Boutiques</div>
+        </div>
+    </div>
+</section>
 
-        /* TARGET AUDIENCE GRID */
-        .target-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
-            gap: 10px;
-            margin-top: 20px;
-        }
+<section class="container">
+    <div class="info-section">
+        <h3>About Sauti Pesa</h3>
+        <p>Sauti Pesa is a revolutionary FinTech tool designed specifically for the Kenyan SME ecosystem. We empower small shop owners ("Duka") with professional security and business intelligence. Our app listens to incoming M-Pesa messages and announces them out loud, ensuring payment is confirmed without you even touching your phone.</p>
+        <br>
+        <h3>Our Privacy Commitment</h3>
+        <p>Sauti Pesa respects your data. We process M-Pesa messages locally on your device to trigger voice alerts. We **do not** store or share your personal private messages with third parties.</p>
+    </div>
+</section>
 
-        .tag {
-            background: rgba(255,255,255,0.1);
-            padding: 15px 10px;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-align: center;
-        }
+<footer>
+    <h2>SAUTI PESA</h2>
+    <p>The Voice of Growth | Nairobi, Kenya</p>
+    <p>Support: +254 119 389 659</p>
+    <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+        <p>© 2026 Sauti Pesa. Affordable growth for every hustler.</p>
+    </div>
+</footer>
 
-        footer {
-            background: #0f172a;
-            color: white;
-            padding: 60px 20px;
+<script>
+    document.getElementById('waForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('bizName').value;
+        const phone = document.getElementById('bizPhone').value;
+        const msg = `Hello Sauti Pesa! I want to join the Founding 1,000 for Ksh 100/mo.\n\nBusiness: ${name}\nPhone: ${phone}`;
+        window.open(`https://wa.me/254119389659?text=${encodeURIComponent(msg)}`, '_blank');
+    });
+</script>
+
+</body>
+</html>            padding: 60px 20px;
             text-align: center;
             width: 100%;
         }
