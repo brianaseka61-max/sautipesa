@@ -39,6 +39,16 @@
             scroll-behavior: smooth;
         }
 
+        /* Marquee Styling */
+        .marquee-info {
+            background: var(--accent-yellow);
+            color: #000;
+            padding: 8px 0;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
         nav { 
             background: white; 
             padding: 12px 20px; 
@@ -98,6 +108,35 @@
             border-bottom: 4px solid var(--primary-blue);
         }
 
+        /* Onboarding Form Styling */
+        .onboarding-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid var(--primary-blue);
+        }
+        .onboarding-box input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .submit-wa {
+            width: 100%;
+            background: var(--success-green);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
         .policy-box {
             background: #fff;
             padding: 30px;
@@ -123,6 +162,10 @@
 </head>
 <body>
 
+<div class="marquee-info">
+    <marquee>🚀 Sauti Pesa is currently onboarding 1000 SMEs in Nairobi! Download the app now to be added to the official waitlist and secure your spot.</marquee>
+</div>
+
 <nav>
     <a href="#" class="logo-nav">
         <img src="logo.png" alt="Sauti Pesa">
@@ -130,6 +173,8 @@
     </a>
     <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#features">Powerful Tools</a>
+        <a href="#onboarding">Join Founders</a>
         <a href="#privacy">Privacy</a>
         <a href="https://wa.me/254119389659" class="whatsapp-cta">Help?</a>
     </div>
@@ -149,6 +194,26 @@
             <p><strong>Sauti Pesa</strong> is a revolutionary business companion built for the Kenyan "Duka" owner and SME. We believe that technology should work for the hustle, not against it.</p>
             <p>Our app acts as a 24/7 digital manager that <strong>listens to incoming M-Pesa notifications</strong> and announces them out loud, ensuring you never get scammed by fake SMS ever again. Beyond security, it’s a full business suite that allows you to track <strong>Cash Sales, Inventory, Debts (Mdeni), Expenses, and CRM</strong> all in one place.</p>
             <p>With a built-in calendar for reminders and customizable voice settings, Sauti Pesa gives your business the professional edge it deserves.</p>
+        </div>
+    </section>
+
+    <section id="onboarding">
+        <h2>Founder Onboarding (Limited Offer)</h2>
+        <div class="onboarding-box">
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 25px;">
+                Sauti Pesa is currently onboarding the first <strong>1,000 SMEs in Nairobi</strong>. 
+                As a Founder Member, you get full access at a locked-in price of only <strong>Ksh 100 per month</strong>. 
+                Hurry! Once we hit our target, the price will increase significantly.
+            </p>
+            <form id="foundingForm">
+                <input type="text" id="fname" placeholder="Your Full Name" required>
+                <input type="text" id="bname" placeholder="Business Name" required>
+                <input type="tel" id="bphone" placeholder="WhatsApp Number" required>
+                <button type="submit" class="submit-wa">REGISTER & MESSAGE WHATSAPP</button>
+            </form>
+            <p style="text-align: center; font-size: 0.85rem; color: #666; margin-top: 15px;">
+                Secure your spot today by sending your details to our support line: <strong>+254 119 389 659</strong>
+            </p>
         </div>
     </section>
 
@@ -205,6 +270,21 @@
     </p>
     <p style="opacity: 0.6; font-size: 0.8rem;">© 2026 Sauti Pesa. Built for the 254 Hustle.</p>
 </footer>
+
+<script>
+    document.getElementById('foundingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const fname = document.getElementById('fname').value;
+        const bname = document.getElementById('bname').value;
+        const phone = document.getElementById('bphone').value;
+        
+        const message = `Hello Sauti Pesa! I want to join the Founder Onboarding.\n\nName: ${fname}\nBusiness: ${bname}\nContact: ${phone}`;
+        const encoded = encodeURIComponent(message);
+        
+        // Open WhatsApp with the message
+        window.open(`https://wa.me/254119389659?text=${encoded}`, '_blank');
+    });
+</script>
 
 </body>
 </html>
