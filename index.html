@@ -1,218 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HV0MCY1PEV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HV0MCY1PEV');
+    </script>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sauti Pesa | Fintech for the African SME</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="KlX23b9lJgzXMqOiCMCY7_aPqaie5FlVMiPSpqQaLyA" />
     
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Sauti Pesa | The Voice of Growth</title>
+    <meta name="description" content="Sauti Pesa: Kenya's #1 Voice Assistant for SMEs. Stop M-Pesa fraud with real-time audio confirmations and manage your duka like a pro.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --brand: #0046ad;
-            --dark: #0f172a;
-            --accent: #facc15;
-            --success: #10b981;
-            --slate: #64748b;
+            --primary-blue: #0046ad;
+            --success-green: #28a745;
+            --light-bg: #f8f9fa;
+            --dark-text: #2d3436;
+            --accent-yellow: #ffc107;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { width: 100%; overflow-x: hidden; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; color: var(--dark); }
-
-        /* NAV */
-        nav {
-            background: white;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            line-height: 1.6; 
+            color: var(--dark-text); 
+            background-color: var(--light-bg);
+            scroll-behavior: smooth;
         }
-        .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .logo-img { height: 30px; }
-        .logo-text { font-weight: 800; color: var(--brand); font-size: 1.2rem; }
 
-        /* COMPACT HERO */
-        .hero {
-            position: relative;
-            padding: 60px 5%;
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            background: linear-gradient(rgba(0, 70, 173, 0.85), rgba(15, 23, 42, 0.9)), 
-                        url('hero-bg.jpg');
+        nav { 
+            background: white; 
+            padding: 12px 20px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        .logo-nav { display: flex; align-items: center; text-decoration: none; }
+        .logo-nav img { height: 40px; width: auto; margin-right: 10px; border-radius: 5px; }
+        .logo-nav span { font-weight: 800; font-size: 1.3rem; color: var(--primary-blue); }
+        .nav-links a { margin-left: 15px; text-decoration: none; color: var(--dark-text); font-weight: 600; }
+
+        header { 
+            background-color: var(--primary-blue); 
+            background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('hero-bg.jpg');
+            background-position: center center;
             background-size: cover;
-            background-position: center;
+            padding: 100px 20px; 
+            text-align: center; 
+            color: white;
+        }
+        header h1 { font-size: 2.8rem; margin: 0; font-weight: 800; }
+
+        .download-btn { 
+            display: inline-block; 
+            background-color: var(--success-green); 
+            color: white; 
+            padding: 18px 40px; 
+            text-decoration: none; 
+            font-size: 1.3rem; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            margin-top: 20px;
+            box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4); 
+            transition: 0.3s; 
         }
 
-        .hero-icon { width: 120px; margin-bottom: 20px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2)); }
-        .hero h1 { font-size: 2.2rem; font-weight: 800; max-width: 800px; margin-bottom: 15px; }
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        section { margin-bottom: 70px; }
+        h2 { color: var(--primary-blue); font-size: 2rem; text-align: center; margin-bottom: 30px; }
         
-        .dl-card {
-            background: var(--dark);
-            padding: 25px;
-            border-radius: 20px;
-            margin-top: -40px;
-            width: 90%;
-            max-width: 350px;
-            z-index: 10;
+        .card-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+        }
+        .card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        .dl-btn {
-            display: block;
-            background: var(--accent);
-            color: black;
-            text-decoration: none;
-            padding: 15px;
-            border-radius: 12px;
-            font-weight: 800;
-            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--primary-blue);
         }
 
-        /* SECTION STYLING */
-        section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
-        .section-tag { color: var(--brand); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
-        h2 { font-size: 2rem; margin-bottom: 20px; font-weight: 800; }
-        
-        /* GRID LAYOUTS */
-        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
-        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .policy-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+        }
 
-        /* CARDS */
-        .feature-box { background: #f8fafc; padding: 30px; border-radius: 20px; border-bottom: 4px solid var(--brand); }
-        .feature-box h3 { margin-bottom: 15px; color: var(--brand); }
-        .feature-box ul { list-style: none; }
-        .feature-box li { margin-bottom: 10px; padding-left: 25px; position: relative; }
-        .feature-box li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 900; }
+        footer { 
+            background: #111; 
+            color: white; 
+            padding: 60px 20px; 
+            text-align: center; 
+        }
+        .whatsapp-cta { color: var(--success-green); text-decoration: none; font-weight: bold; }
 
-        /* AUDIENCE TAGS */
-        .audience-tag { background: #f1f5f9; padding: 10px 20px; border-radius: 50px; font-weight: 600; display: inline-block; margin: 5px; font-size: 0.9rem; color: var(--brand); border: 1px solid #e2e8f0; }
-
-        /* MV SECTION */
-        .mv-container { background: var(--brand); color: white; border-radius: 30px; padding: 50px; display: grid; grid-template-columns: 1fr; gap: 30px; }
-        .mv-item h3 { color: var(--accent); margin-bottom: 10px; }
-
-        @media (min-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr 1fr; }
-            .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
-            .mv-container { grid-template-columns: 1fr 1fr; }
-            .hero h1 { font-size: 3.5rem; }
+        @media (max-width: 600px) {
+            header h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#" class="logo-area">
-        <img src="hero-bg.png" class="logo-img" alt="Sauti Logo">
-        <span class="logo-text">SAUTI PESA</span>
+    <a href="#" class="logo-nav">
+        <img src="logo.png" alt="Sauti Pesa">
+        <span>SAUTI PESA</span>
     </a>
-    <div style="font-size: 0.8rem; font-weight: 700; color: var(--success);">WHATSAPP HELP</div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#privacy">Privacy</a>
+        <a href="https://wa.me/254119389659" class="whatsapp-cta">Help?</a>
+    </div>
 </nav>
 
-<header class="hero">
-    <img src="hero-bg.png" class="hero-icon" alt="Sauti Pesa Icon">
-    <h1>Kama Sauti Pesa Haijaongea, <br>Pesa Haijaingia!</h1>
-    <p style="opacity: 0.9; max-width: 600px;">The #1 Voice-First Business Assistant for Kenyan Entrepreneurs.</p>
+<header>
+    <h1>Kama Sauti Pesa Haijaongea, Pesa Haijaingia!</h1>
+    <p>The #1 Financial Voice Assistant for Kenyan SMEs. Real-time protection for your daily hustle.</p>
+    <a href="SautiPesa.apk" class="download-btn">📲 DOWNLOAD SAUTI PESA</a>
 </header>
 
-<center>
-    <div class="dl-card">
-        <p style="color:white; font-size: 0.8rem; margin-bottom: 5px;">Ready to secure your shop?</p>
-        <a href="SautiPesa.apk" class="dl-btn">📲 DOWNLOAD APK FILE</a>
-    </div>
-</center>
+<div class="container">
+    
+    <section id="about">
+        <h2>About Sauti Pesa</h2>
+        <div class="card" style="text-align: left;">
+            <p><strong>Sauti Pesa</strong> is a revolutionary business companion built for the Kenyan "Duka" owner and SME. We believe that technology should work for the hustle, not against it.</p>
+            <p>Our app acts as a 24/7 digital manager that <strong>listens to incoming M-Pesa notifications</strong> and announces them out loud, ensuring you never get scammed by fake SMS ever again. Beyond security, it’s a full business suite that allows you to track <strong>Cash Sales, Inventory, Debts (Mdeni), Expenses, and CRM</strong> all in one place.</p>
+            <p>With a built-in calendar for reminders and customizable voice settings, Sauti Pesa gives your business the professional edge it deserves.</p>
+        </div>
+    </section>
 
-<section id="problem">
-    <div class="grid-2">
-        <div>
-            <span class="section-tag">The Reality</span>
-            <h2>The Hidden Leak in the Kenyan Duka</h2>
-            <p>For the average Kenyan merchant, M-Pesa is both a blessing and a curse. <strong>Fake SMS fraud</strong> has become sophisticated, costing dukas thousands daily. Merchants are often too busy serving customers to verify every transaction by reading a small screen.</p>
-            <br>
-            <p>Furthermore, disorganized bookkeeping leads to <strong>"Invisible Profit Leaks."</strong> Forgotten credit sales (Mdeni) and unrecorded expenses mean that at the end of the month, the merchant has worked hard but has no cash to show for it.</p>
+    <section id="features">
+        <h2>Powerful Tools for Your Hustle</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Voice Alerts</h3>
+                <p>The app listens for M-Pesa messages and speaks the amount received instantly.</p>
+            </div>
+            <div class="card">
+                <h3>Stock & Sales</h3>
+                <p>Track inventory and record cash sales alongside mobile payments.</p>
+            </div>
+            <div class="card">
+                <h3>Debt Tracking</h3>
+                <p>Keep a clear record of who owes you (Mdeni) and send reminders.</p>
+            </div>
+            <div class="card">
+                <h3>Custom Settings</h3>
+                <p>Adjust volume, select backup options, and personalize your experience.</p>
+            </div>
         </div>
-        <div style="background: #f1f5f9; padding: 40px; border-radius: 30px; text-align: center;">
-            <img src="icon-voice.png" style="width: 80px; margin-bottom: 20px;" alt="Voice">
-            <h3 style="color: var(--brand);">Stopping Fraud via Sound</h3>
-            <p style="font-size: 0.9rem;">Sauti Pesa turns every payment notification into a loud, clear voice alert. No voice = No payment.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<section id="value" style="background: #fff;">
-    <span class="section-tag">Value Proposition</span>
-    <h2>Professional Financial Control</h2>
-    <div class="grid-3">
-        <div class="feature-box">
-            <h3>Fraud-Proof Security</h3>
-            <ul>
-                <li>Instant Voice Confirmation for all M-Pesa payments.</li>
-                <li>Eliminates the risk of "Photoshop" or Fake SMS scams.</li>
-                <li>Hands-free verification so you never stop serving.</li>
-            </ul>
+    <section id="privacy">
+        <h2>Privacy Policy</h2>
+        <div class="policy-box">
+            <h3>1. Data Collection</h3>
+            <p>Sauti Pesa requires permission to read SMS notifications to provide voice confirmations for M-Pesa transactions. This data is processed locally on your device to trigger the audio alert.</p>
+            <h3>2. Data Usage</h3>
+            <p>Business data such as sales, inventory, and debts are stored securely. We do not sell your financial data to third parties. Your data is used solely to provide business analytics and reports within the app.</p>
+            <h3>3. Permissions</h3>
+            <p>The app requires Notification Access and Storage permissions to function correctly (recording sales and backing up data).</p>
+            <h3>4. Security</h3>
+            <p>We implement industry-standard measures to protect your information. Users are responsible for maintaining the security of their own devices.</p>
         </div>
-        <div class="feature-box">
-            <h3>Automated Bookkeeping</h3>
-            <ul>
-                <li>One-tap recording for all Credit (Mdeni) sales.</li>
-                <li>Automated WhatsApp reminders for your debtors.</li>
-                <li>Real-time Daily, Weekly, and Monthly profit reports.</li>
-            </ul>
-        </div>
-        <div class="feature-box">
-            <h3>Business Intelligence</h3>
-            <ul>
-                <li>Track your best-selling items automatically.</li>
-                <li>Monitor business growth via the AI dashboard.</li>
-                <li>Secure local data processing for 100% privacy.</li>
-            </ul>
-        </div>
-    </div>
-</section>
+    </section>
+</div>
 
-<section>
-    <div class="mv-container">
-        <div class="mv-item">
-            <h3>Our Mission</h3>
-            <p>To eliminate financial fraud in Africa's informal sector by providing 1 million SMEs with simple, affordable, and professional digital accounting tools.</p>
-        </div>
-        <div class="mv-item">
-            <h3>Our Vision</h3>
-            <p>To be the leading digital voice for Kenyan commerce, turning every duka into a professional, secure, and data-driven financial hub.</p>
-        </div>
-    </div>
-</section>
-
-<section id="audience" style="text-align: center;">
-    <span class="section-tag">Who We Serve</span>
-    <h2>Built for Every Kenyan Hustle</h2>
-    <div style="margin-top: 20px;">
-        <span class="audience-tag">Retail Dukas</span>
-        <span class="audience-tag">Wholesalers</span>
-        <span class="audience-tag">M-Pesa Agents</span>
-        <span class="audience-tag">Pharmacies</span>
-        <span class="audience-tag">Hardware Stores</span>
-        <span class="audience-tag">Agrovets</span>
-        <span class="audience-tag">Beauty Salons</span>
-        <span class="audience-tag">Boutiques</span>
-        <span class="audience-tag">Cafes & Kibandaskis</span>
-    </div>
-</section>
-
-<footer style="background: var(--dark); color: white; padding: 60px 5%; text-align: center;">
-    <img src="hero-bg.png" style="width: 50px; margin-bottom: 20px;" alt="Logo">
-    <p style="opacity: 0.6; font-size: 0.8rem;">© 2026 Sauti Pesa | Nairobi, Kenya</p>
-    <p style="opacity: 0.6; font-size: 0.8rem;">Official Support: +254 119 389 659</p>
+<footer>
+    <p style="font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">SAUTI PESA</p>
+    <p>The Voice of Growth | Nairobi, Kenya</p>
+    <p style="margin: 25px 0;">
+        <a href="https://wa.me/254119389659" class="whatsapp-cta">💬 Chat with Support: +254 119 389 659</a>
+    </p>
+    <p style="opacity: 0.6; font-size: 0.8rem;">© 2026 Sauti Pesa. Built for the 254 Hustle.</p>
 </footer>
 
 </body>
