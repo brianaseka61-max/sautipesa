@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sauti Pesa | The Voice of Kenyan SMEs</title>
+    <title>Sauti Pesa | Fintech for the African SME</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     
@@ -13,195 +13,207 @@
             --dark: #0f172a;
             --accent: #facc15;
             --success: #10b981;
+            --slate: #64748b;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { width: 100%; overflow-x: hidden; font-family: 'Plus Jakarta Sans', sans-serif; background: #fff; }
+        body { width: 100%; overflow-x: hidden; font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; color: var(--dark); }
 
-        /* HEADER & NAV */
+        /* NAV */
         nav {
             background: white;
-            padding: 15px 20px;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
-        .logo { font-weight: 800; color: var(--brand); text-decoration: none; font-size: 1.1rem; }
-        .nav-links { display: flex; gap: 15px; }
-        .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; font-weight: 600; }
+        .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-img { height: 30px; }
+        .logo-text { font-weight: 800; color: var(--brand); font-size: 1.2rem; }
 
-        /* HERO - USING hero-bg.jpg */
+        /* COMPACT HERO */
         .hero {
             position: relative;
-            padding: 100px 24px;
-            text-align: center;
-            color: white;
-            background: linear-gradient(rgba(0, 70, 173, 0.7), rgba(15, 23, 42, 0.85)), 
-                        url('hero-bg.jpg'); /* Matches your filename */
-            background-size: cover;
-            background-position: center;
-            min-height: 60vh;
+            padding: 60px 5%;
+            min-height: 500px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-
-        /* hero-bg.png ICON OVERLAY */
-        .hero-icon {
-            width: 150px;
-            margin-bottom: 20px;
-            z-index: 5;
-        }
-
-        .hero h1 { font-size: 2.4rem; font-weight: 800; line-height: 1.2; z-index: 5; }
-
-        /* DOWNLOAD BOX */
-        .dl-box {
-            background: var(--dark);
-            width: 90%;
-            max-width: 400px;
-            margin: -50px auto 40px;
-            padding: 30px;
-            border-radius: 24px;
-            position: relative;
-            z-index: 10;
             text-align: center;
             color: white;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            background: linear-gradient(rgba(0, 70, 173, 0.85), rgba(15, 23, 42, 0.9)), 
+                        url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-icon { width: 120px; margin-bottom: 20px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2)); }
+        .hero h1 { font-size: 2.2rem; font-weight: 800; max-width: 800px; margin-bottom: 15px; }
+        
+        .dl-card {
+            background: var(--dark);
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: -40px;
+            width: 90%;
+            max-width: 350px;
+            z-index: 10;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         .dl-btn {
             display: block;
             background: var(--accent);
-            color: #000;
-            padding: 18px;
-            border-radius: 12px;
+            color: black;
             text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
             font-weight: 800;
-            margin-top: 15px;
+            margin-top: 10px;
         }
 
-        /* SLIDESHOW SECTION */
-        section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+        /* SECTION STYLING */
+        section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-tag { color: var(--brand); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
+        h2 { font-size: 2rem; margin-bottom: 20px; font-weight: 800; }
+        
+        /* GRID LAYOUTS */
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 20px; }
 
-        .slideshow-container {
-            width: 100%;
-            border-radius: 20px;
-            overflow: hidden;
-            background: #f8fafc;
-            aspect-ratio: 1/1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .slide { display: none; width: 85%; height: auto; }
+        /* CARDS */
+        .feature-box { background: #f8fafc; padding: 30px; border-radius: 20px; border-bottom: 4px solid var(--brand); }
+        .feature-box h3 { margin-bottom: 15px; color: var(--brand); }
+        .feature-box ul { list-style: none; }
+        .feature-box li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .feature-box li::before { content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 900; }
 
-        /* TEXT CONTENT */
-        .v-card { background: #f8fafc; padding: 30px; border-radius: 20px; margin-bottom: 20px; border-left: 6px solid var(--brand); }
-        h2 { font-size: 2rem; margin-bottom: 20px; }
+        /* AUDIENCE TAGS */
+        .audience-tag { background: #f1f5f9; padding: 10px 20px; border-radius: 50px; font-weight: 600; display: inline-block; margin: 5px; font-size: 0.9rem; color: var(--brand); border: 1px solid #e2e8f0; }
 
-        /* FORM */
-        .form-container { background: white; border: 2px solid var(--brand); padding: 35px; border-radius: 24px; max-width: 500px; margin: 0 auto; }
-        input { width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 12px; }
-        .submit-btn { width: 100%; background: var(--success); color: white; padding: 18px; border: none; border-radius: 12px; font-weight: 800; cursor: pointer; }
+        /* MV SECTION */
+        .mv-container { background: var(--brand); color: white; border-radius: 30px; padding: 50px; display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .mv-item h3 { color: var(--accent); margin-bottom: 10px; }
 
         @media (min-width: 768px) {
-            .grid { grid-template-columns: 1fr 1fr; }
-            .hero h1 { font-size: 4rem; }
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+            .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+            .mv-container { grid-template-columns: 1fr 1fr; }
+            .hero h1 { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#" class="logo">SAUTI PESA</a>
-    <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#problem">Value</a>
-        <a href="#register">Join</a>
-    </div>
+    <a href="#" class="logo-area">
+        <img src="hero-bg.png" class="logo-img" alt="Sauti Logo">
+        <span class="logo-text">SAUTI PESA</span>
+    </a>
+    <div style="font-size: 0.8rem; font-weight: 700; color: var(--success);">WHATSAPP HELP</div>
 </nav>
 
 <header class="hero">
-    <img src="hero-bg.png" class="hero-icon" alt="Sauti Logo">
+    <img src="hero-bg.png" class="hero-icon" alt="Sauti Pesa Icon">
     <h1>Kama Sauti Pesa Haijaongea, <br>Pesa Haijaingia!</h1>
+    <p style="opacity: 0.9; max-width: 600px;">The #1 Voice-First Business Assistant for Kenyan Entrepreneurs.</p>
 </header>
 
-<div class="dl-box">
-    <h3>Start Your Secure Hustle</h3>
-    <a href="SautiPesa.apk" class="dl-btn">📲 DOWNLOAD SAUTI PESA</a>
-</div>
-
-<section id="about">
-    <div class="grid">
-        <div class="text">
-            <h2 id="about-title">Securing the Kenyan Hustle</h2>
-            <p style="color: #64748b; line-height: 1.7;">Sauti Pesa is designed for the Kenyan setting where speed and security are everything. We provide a digital voice for your business that confirms M-Pesa payments instantly.</p>
-        </div>
-        
-        <div class="slideshow-container">
-            <img src="icon-CRM.png" class="slide" alt="CRM Icon">
-            <img src="icon-reports.png" class="slide" alt="Reports Icon">
-            <img src="icon-voice.png" class="slide" alt="Voice Icon">
-        </div>
+<center>
+    <div class="dl-card">
+        <p style="color:white; font-size: 0.8rem; margin-bottom: 5px;">Ready to secure your shop?</p>
+        <a href="SautiPesa.apk" class="dl-btn">📲 DOWNLOAD APK FILE</a>
     </div>
-</section>
+</center>
 
 <section id="problem">
-    <div class="v-card">
-        <h3>The Kenyan Problem</h3>
-        <p>Fake M-Pesa SMS fraud and disorganized "Mdeni" books cause duka owners to lose money every day. Checking a phone in a crowded shop is slow and risky.</p>
-    </div>
-    <div class="v-card">
-        <h3>Our Value Statement</h3>
-        <p>Sauti Pesa offers <strong>Voice-First Confirmation</strong>. If the phone doesn't speak the amount and the sender's name, the goods don't leave the shop. We automate your profit tracking so you can focus on growth.</p>
-    </div>
-</section>
-
-<section id="register">
-    <div class="form-container">
-        <h2 style="text-align:center;">Founder Registration</h2>
-        <form id="waForm">
-            <input type="text" id="bizName" placeholder="Business Name" required>
-            <input type="tel" id="bizPhone" placeholder="WhatsApp Number" required>
-            <button type="submit" class="submit-btn">JOIN VIA WHATSAPP</button>
-        </form>
+    <div class="grid-2">
+        <div>
+            <span class="section-tag">The Reality</span>
+            <h2>The Hidden Leak in the Kenyan Duka</h2>
+            <p>For the average Kenyan merchant, M-Pesa is both a blessing and a curse. <strong>Fake SMS fraud</strong> has become sophisticated, costing dukas thousands daily. Merchants are often too busy serving customers to verify every transaction by reading a small screen.</p>
+            <br>
+            <p>Furthermore, disorganized bookkeeping leads to <strong>"Invisible Profit Leaks."</strong> Forgotten credit sales (Mdeni) and unrecorded expenses mean that at the end of the month, the merchant has worked hard but has no cash to show for it.</p>
+        </div>
+        <div style="background: #f1f5f9; padding: 40px; border-radius: 30px; text-align: center;">
+            <img src="icon-voice.png" style="width: 80px; margin-bottom: 20px;" alt="Voice">
+            <h3 style="color: var(--brand);">Stopping Fraud via Sound</h3>
+            <p style="font-size: 0.9rem;">Sauti Pesa turns every payment notification into a loud, clear voice alert. No voice = No payment.</p>
+        </div>
     </div>
 </section>
 
-<footer style="text-align:center; padding: 40px; color: #94a3b8; font-size: 0.8rem;">
-    © 2026 Sauti Pesa | Nairobi, Kenya
+<section id="value" style="background: #fff;">
+    <span class="section-tag">Value Proposition</span>
+    <h2>Professional Financial Control</h2>
+    <div class="grid-3">
+        <div class="feature-box">
+            <h3>Fraud-Proof Security</h3>
+            <ul>
+                <li>Instant Voice Confirmation for all M-Pesa payments.</li>
+                <li>Eliminates the risk of "Photoshop" or Fake SMS scams.</li>
+                <li>Hands-free verification so you never stop serving.</li>
+            </ul>
+        </div>
+        <div class="feature-box">
+            <h3>Automated Bookkeeping</h3>
+            <ul>
+                <li>One-tap recording for all Credit (Mdeni) sales.</li>
+                <li>Automated WhatsApp reminders for your debtors.</li>
+                <li>Real-time Daily, Weekly, and Monthly profit reports.</li>
+            </ul>
+        </div>
+        <div class="feature-box">
+            <h3>Business Intelligence</h3>
+            <ul>
+                <li>Track your best-selling items automatically.</li>
+                <li>Monitor business growth via the AI dashboard.</li>
+                <li>Secure local data processing for 100% privacy.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="mv-container">
+        <div class="mv-item">
+            <h3>Our Mission</h3>
+            <p>To eliminate financial fraud in Africa's informal sector by providing 1 million SMEs with simple, affordable, and professional digital accounting tools.</p>
+        </div>
+        <div class="mv-item">
+            <h3>Our Vision</h3>
+            <p>To be the leading digital voice for Kenyan commerce, turning every duka into a professional, secure, and data-driven financial hub.</p>
+        </div>
+    </div>
+</section>
+
+<section id="audience" style="text-align: center;">
+    <span class="section-tag">Who We Serve</span>
+    <h2>Built for Every Kenyan Hustle</h2>
+    <div style="margin-top: 20px;">
+        <span class="audience-tag">Retail Dukas</span>
+        <span class="audience-tag">Wholesalers</span>
+        <span class="audience-tag">M-Pesa Agents</span>
+        <span class="audience-tag">Pharmacies</span>
+        <span class="audience-tag">Hardware Stores</span>
+        <span class="audience-tag">Agrovets</span>
+        <span class="audience-tag">Beauty Salons</span>
+        <span class="audience-tag">Boutiques</span>
+        <span class="audience-tag">Cafes & Kibandaskis</span>
+    </div>
+</section>
+
+<footer style="background: var(--dark); color: white; padding: 60px 5%; text-align: center;">
+    <img src="hero-bg.png" style="width: 50px; margin-bottom: 20px;" alt="Logo">
+    <p style="opacity: 0.6; font-size: 0.8rem;">© 2026 Sauti Pesa | Nairobi, Kenya</p>
+    <p style="opacity: 0.6; font-size: 0.8rem;">Official Support: +254 119 389 659</p>
 </footer>
-
-<script>
-    // SLIDESHOW LOGIC
-    let index = 0;
-    const slides = document.querySelectorAll(".slide");
-    
-    function startSlides() {
-        slides.forEach(s => s.style.display = "none");
-        index++;
-        if (index > slides.length) index = 1;
-        slides[index-1].style.display = "block";
-        setTimeout(startSlides, 3000);
-    }
-    startSlides();
-
-    // WHATSAPP REDIRECT
-    document.getElementById('waForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const n = document.getElementById('bizName').value;
-        const p = document.getElementById('bizPhone').value;
-        const msg = `Hello Sauti Pesa! I want to join. Business: ${n}, Phone: ${p}`;
-        window.open(`https://wa.me/254119389659?text=${encodeURIComponent(msg)}`, '_blank');
-    });
-</script>
 
 </body>
 </html>
